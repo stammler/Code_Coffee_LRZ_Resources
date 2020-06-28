@@ -4,7 +4,7 @@
 #SBATCH -D ./
 #SBATCH --get-user-env
 #SBATCH --clusters=serial
-#SBATCH --partition=serial_mpp2
+#SBATCH --partition=serial_std
 #SBATCH --mail-type=end
 #SBATCH --mem=16mb
 #SBATCH --cpus-per-task=1
