@@ -1,4 +1,4 @@
-FCOMP = gfortran
+FCOMP = ifort
 FFLAGS = -O3
 
 EXE = matrix_matrix_multiplication

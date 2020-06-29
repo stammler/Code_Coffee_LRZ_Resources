@@ -2,9 +2,9 @@ program mkl_test
 
     implicit none
 
-    integer, parameter :: M = 2          ! Problem size
-    integer, parameter :: N = 2
-    integer, parameter :: K = 2
+    integer, parameter :: M = 1000          ! Problem size
+    integer, parameter :: N = 2000
+    integer, parameter :: K = 4000
 
     double precision   :: A(M, K)           ! Matrices
     double precision   :: B(K, N)
@@ -64,6 +64,6 @@ program mkl_test
     ! Stop timer
     call system_clock(iTime2)
     write(*,*) "DGEMM:", real(iTime2-iTime1)/real(count_rate)
-    write(*,*) "Max Error: ", maxval( abs( C1(:, :) - C2(:, :) ) )
+    write(*,*) "Max Error: ", maxval( abs( (C1(:, :) - C2(:, :))/C2(:, :) ) )
 
 end program mkl_test

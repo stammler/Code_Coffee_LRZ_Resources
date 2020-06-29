@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J hello_world
+#SBATCH -J mat_mat_mult
 #SBATCH -o ./%x.%j.%N.out
 #SBATCH -D ./
 #SBATCH --get-user-env
@@ -8,8 +8,8 @@
 #SBATCH --mail-type=end
 #SBATCH --mem=16mb
 #SBATCH --cpus-per-task=1
-#SBATCH --mail-user=			<--- ENTER EMAIL ADDRESS HERE !!!
+#SBATCH --mail-user=			<--- ENTER EMAIL ADDRESS HERE !!! 
 #SBATCH --export=NONE
 #SBATCH --time=24:00:00
  
-./hello_world
+./matrix_matrix_multiplication
