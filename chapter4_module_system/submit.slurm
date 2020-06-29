@@ -6,7 +6,7 @@
 #SBATCH --clusters=serial
 #SBATCH --partition=serial_std
 #SBATCH --mail-type=end
-#SBATCH --mem=16mb
+#SBATCH --mem=200mb
 #SBATCH --cpus-per-task=1
 #SBATCH --mail-user=			<--- ENTER EMAIL ADDRESS HERE !!! 
 #SBATCH --export=NONE

@@ -1,4 +1,4 @@
-program mkl_test
+program matrix_matrix_multiplication
 
     implicit none
 
@@ -27,21 +27,6 @@ program mkl_test
     C1(:, :) = 0.d0
     C2(:, :) = 0.d0
 
-    !do i=1, N
-    !    Y(i) = i*1.d0
-    !end do
-    !A(:, :) = 0.d0
-    !do i=1, N
-    !    do j=1, N
-    !        if(j==i+1) then
-    !            A(i, j) = 1.d0
-    !        end if
-    !    end do
-    !    if(i==N) then
-    !        A(i, 1) = 1.d0
-    !    end if
-    !end do
-
     ! Standard execution with loops
     ! Start timer
     call system_clock(iTime1)
@@ -66,4 +51,4 @@ program mkl_test
     write(*,*) "DGEMM:", real(iTime2-iTime1)/real(count_rate)
     write(*,*) "Max Error: ", maxval( abs( (C1(:, :) - C2(:, :))/C2(:, :) ) )
 
-end program mkl_test
+end program matrix_matrix_multiplication
