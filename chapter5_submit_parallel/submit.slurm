@@ -6,9 +6,9 @@
 #SBATCH --clusters=cm2_tiny
 #SBATCH --partition=cm2_tiny
 #SBATCH --nodes=1-1
-#SBATCH --cpus-per-task=4
+#SBATCH --cpus-per-task=8
 #SBATCH --mail-type=end
-#SBATCH --mail-user=stammler@usm.lmu.de
+#SBATCH --mail-user=            <--- ENTER EMAIL ADDRESS HER !!!
 #SBATCH --export=NONE
 #SBATCH --time=08:00:00
 module load slurm_setup
