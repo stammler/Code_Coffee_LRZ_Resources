@@ -3,11 +3,12 @@
 #SBATCH -o ./%x.%j.%N.out
 #SBATCH -D ./
 #SBATCH --get-user-env
-#SBATCH --clusters=mpp3
+#SBATCH --clusters=cm2_tiny
+#SBATCH --partition=cm2_tiny
 #SBATCH --nodes=1-1
 #SBATCH --cpus-per-task=4
 #SBATCH --mail-type=end
-#SBATCH --mail-user=            <--- ENTER EMAIL ADDRESS HERE !!!
+#SBATCH --mail-user=stammler@usm.lmu.de
 #SBATCH --export=NONE
 #SBATCH --time=08:00:00
 module load slurm_setup

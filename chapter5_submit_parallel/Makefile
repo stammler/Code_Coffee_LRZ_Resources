@@ -1,5 +1,5 @@
-FCOMP = gfortran
-FFLAGS = -O3 -openmp
+FCOMP = ifort
+FFLAGS = -O3 -qopenmp
 
 EXE = matrix_matrix_multiplication_parallel
 
