@@ -2,27 +2,30 @@ program mkl_test
 
     implicit none
 
-    integer, parameter :: N = 1000          ! Problem size
-    double precision   :: A(N, N)           ! Matrix
-    double precision   :: Y(N)              ! Vector
+    integer, parameter :: M = 2          ! Problem size
+    integer, parameter :: N = 2
+    integer, parameter :: K = 2
 
-    double precision   :: R1(N)             ! Result vectors
-    double precision   :: R2(N)
+    double precision   :: A(M, K)           ! Matrices
+    double precision   :: B(K, N)
+
+    double precision   :: C1(M, N)          ! Result matrices
+    double precision   :: C2(M, N)
 
     integer            :: count_rate        ! Time keeping
     integer            :: iTime1, iTime2
 
-    integer            :: i, j              ! Iteration variables
+    integer            :: i, j, l           ! Iteration variables
 
     ! Get count rate
     call system_clock(count_rate=count_rate)
 
-    ! Initializing matrix and vector with random numbers
+    ! Initializing matricess with random numbers
     call random_number(A)
-    call random_number(Y)
+    call random_number(B)
     ! Initialize result vectors with zeros
-    R1(:) = 0.d0
-    R2(:) = 0.d0
+    C1(:, :) = 0.d0
+    C2(:, :) = 0.d0
 
     !do i=1, N
     !    Y(i) = i*1.d0
@@ -42,9 +45,11 @@ program mkl_test
     ! Standard execution with loops
     ! Start timer
     call system_clock(iTime1)
-    do i=1, N
-        do j=1, N
-            R1(i) = R1(i) + A(i, j) * Y(j)
+    do i=1, M
+        do l=1, K
+            do j=1, N
+                C1(i, j) = C1(i, j) + A(i, l) * B(l, j)
+            end do
         end do
     end do
     ! Stop timer
@@ -55,10 +60,10 @@ program mkl_test
     ! Matrix-vector multiplication with ?GEMM
     ! Start timer
     call system_clock(iTime1)
-    call dgemm("N", "N", N, N, 1, 1.d0, A, N, Y, N, 0.d0, R2, N)
+    call dgemm("N", "N", M, N, K, 1.d0, A(:, :), M, B(:, :), K, 0.d0, C2(:, :), M)
     ! Stop timer
     call system_clock(iTime2)
     write(*,*) "DGEMM:", real(iTime2-iTime1)/real(count_rate)
-    write(*,*) "Max Error: ", maxval( abs( R1(:) - R2(:) ) )
+    write(*,*) "Max Error: ", maxval( abs( C1(:, :) - C2(:, :) ) )
 
 end program mkl_test

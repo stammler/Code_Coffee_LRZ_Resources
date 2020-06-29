@@ -1,7 +1,7 @@
-FCOMP = ifort
+FCOMP = gfortran
 FFLAGS = -O3
 
-EXE = mkl_test
+EXE = matrix_matrix_multiplication
 
 $(EXE): Makefile
 		$(FCOMP) $(FFLAGS) -o $(EXE) $(EXE).f90 $(MKL_INC) $(MKL_SHLIB)
