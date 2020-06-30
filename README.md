@@ -6,7 +6,7 @@ It's not meant to be complete. For more information please follow the links prov
 
 ## Chapter 1: Getting an account and logging in
 
-Staff of all Munich universities can get an LRZ account for free.  
+Staff of all Munich universities can get an LRZ account for free.
 All you have to do is to find your local master user. For the University Observatory these are Keith Butler and Rudolf Gabler. They can create an account for you. After that you'll automatically get an email with further instructions.
 
 You can login to the LRZ systems via `ssh`:
@@ -15,7 +15,7 @@ You can login to the LRZ systems via `ssh`:
 
 There are different login nodes (e.g., 1, 2, 3, 4, 8, 10) and not all computer systems can be reached from all login nodes.
 
-To have a look which computer systems can be reached from which login node, please follow [this link](https://doku.lrz.de/display/PUBLIC/Access+and+Login+to+the+Linux-Cluster#AccessandLogintotheLinuxCluster-LoginandSecurity).  
+To have a look which computer systems can be reached from which login node, please follow [this link](https://doku.lrz.de/display/PUBLIC/Access+and+Login+to+the+Linux-Cluster#AccessandLogintotheLinuxCluster-LoginandSecurity).
 To see what computing services are online, you can follow [this link](https://doku.lrz.de/display/PUBLIC/High+Performance+Computing).
 
 In your home directory you have 100 GByte per user available. If you need temporarily more space for large simulations you can run your simulation on the `scratch` file system, which has 1,400 TByte (total) available. Files on `scratch` will be deleted after a few days depending on the demand.
@@ -152,6 +152,8 @@ You can now run your scripts, programs or even an interactive `iPython` session 
 For more information (e.g. interactive parallel processing) please follow this [link](https://doku.lrz.de/display/PUBLIC/Running+serial+jobs+on+the+Linux-Cluster#RunningserialjobsontheLinuxCluster-InteractiveSLURMshell). Also, have a look at the [policies for interactive jobs](https://doku.lrz.de/display/PUBLIC/Resource+limits+for+serial+jobs+on+Linux+Cluster#ResourcelimitsforserialjobsonLinuxCluster-Policiesforinteractivejobs).
 
 ## Chapter 7: Cloud computing
+
+The LRZ also offers cloud computing options where you can configure and run your own virtual machine. For details, see [this notebook](chapter7_cloud_computing/compute_cloud_tutorial.ipynb).
 
 ## Chapter 8: Computing workshops at the LRZ
 
